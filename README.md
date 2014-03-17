@@ -72,7 +72,7 @@ The instructions are pretty much the same to run the website local or on a serve
 ```
 ### Update config.php with your path/to/project
 
-7. Go back into the browser and run `pwd`
+7. Go back into terminal and run `pwd`
 8. Copy the result
 9. Back to the your text editor
 10. Replace `txpath` with whatever you copied during the `pwd` step
