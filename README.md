@@ -56,7 +56,9 @@ The instructions are pretty much the same to run the website local or on a serve
 3. `cd textpattern`
 4. `touch config.php`
 5. Open config.php in your favorite text editor
-6. Paste the following: 
+
+### Paste into config.php
+
 ```
 <?php
     $txpcfg['db'] = 'projectexplorer';
@@ -68,6 +70,8 @@ The instructions are pretty much the same to run the website local or on a serve
     $txpcfg['dbcharset'] = 'utf8';
 ?>
 ```
+### Update config.php with your path/to/project
+
 7. Go back into the browser and run `pwd`
 8. Copy the result
 9. Back to the your text editor
