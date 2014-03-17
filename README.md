@@ -11,7 +11,7 @@ projectexplorer.org
 
 ## Database
 
-Contact us for a copy of the latest database dump for developing locally.
+Contact us for a copy of the latest database dump for developing locally. For production servers, you'll just need to import the SQL through phpMyAdmin or however you like to rock MySQL.
 
 ## Get running locally or on a server
 
