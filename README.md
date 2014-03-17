@@ -56,7 +56,8 @@ The instructions are pretty much the same to run the website local or on a serve
 3. `cd textpattern`
 4. `touch config.php`
 5. Open config.php in your favorite text editor
-6. Paste the following: ```
+6. Paste the following: 
+```
 <?php
     $txpcfg['db'] = 'projectexplorer';
     $txpcfg['user'] = 'root';
