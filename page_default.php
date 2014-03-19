@@ -54,17 +54,17 @@
             <h2>What's new?</h2>
             <article>
                 <p>
-                    <span class="dateline">Apr. 2013:</span> Four Seasons hotels in Nevis and Singapore will host team ProjectExplorer.org this ear during British Empire series filming.
+                    <span class="dateline">Mar. 2014:</span> We&rsquo;ve got a whole new look! Check out the new site and let us know what you think by tweeting us <a href="https://twitter.com/projectexplorer">@projectexplorer</a>.
                 </p>
             </article>
             <article>
                 <p>
-                    <span class="dateline">Mar. 2013:</span> The team heads to Montreal to film the first part of the British Empire series!
+                    <span class="dateline">Jan. 2014:</span> Belmond Hotels joins ProjectExplorer.org as sponsor of our upcoming Peru series. Filming begins November 2014, and will take place in Lima, Sacred Valley, and Machu Picchu.</a>
                 </p>
             </article>
             <article>
                 <p>
-                    <span class="dateline">Dec. 2012:</span> ProjectExplorer.org partners with Vimeo to share our video work.
+                    <span class="dateline">Dec. 2013:</span> We&rsquo;re moving (our videos!) All episodes will now be hosted on Vimeo. Find us at <a href="http://vimeo.com/projectexplorer">vimeo.com/projectexplorer</a>.
                 </p>
             </article>
         </section>
