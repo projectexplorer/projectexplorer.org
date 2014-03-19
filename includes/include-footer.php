@@ -3,6 +3,7 @@
         <div class="quarter">
             <ul>
                 <li><a href="/about/">About</a></li>
+                <li><a href="/about/awards-recognition">Awards &amp; Recognition</a></li>
                 <li><a href="/board/">Board &amp; Creative Advisors</a></li>
                 <li><a href="/about/contact">Contact</a></li>
                 <li><a href="/about/donate">Donate</a></li>
