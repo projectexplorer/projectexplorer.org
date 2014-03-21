@@ -14,7 +14,7 @@
     	<txp:else />
             <div class="explorers">
     		  <h2>Explorers</h2>
-    		  <txp:article form="explorers_list" pgonly="0" status="4" />
+    		  <txp:article form="explorers_list" limit="50" pgonly="0" status="live" />
             </div>
 
     	</txp:if_individual_article>
