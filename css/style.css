@@ -1,5 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700);
 @import url(http://fonts.googleapis.com/css?family=Oswald:300);
+@import url(http://fonts.googleapis.com/css?family=Delius|Delius+Unicase:400,700);
 
 * {
     margin:0;
@@ -11,9 +12,13 @@ body {
     font: 16px/1.5em 'Roboto Slab', serif;
 }
 
+
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Oswald', sans-serif;
 }
+
+
 
 h1 {
     font-size: 36px;
@@ -21,7 +26,7 @@ h1 {
 }
 
 h2 {
-    font-size: 32px;
+    font-size: 28px;
     line-height: 1.25em;
     margin: 1em 0 0.75em 0;
 }
@@ -280,10 +285,22 @@ footer p {
 }
 
 .banner.full h2 {
+    font-family: 'Delius Unicase', cursive;
     color: #ffffff;
+    font-weight: 400;
     font-size: 21px;
     margin: 0;
     padding: 5px;
+}
+
+.banner.full h2 a:link, h2 a:visited{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.banner.full h2 a:hover{
+    color: #e0e0e0;
+    text-decoration: underline;
 }
 
 .banner img {
@@ -305,13 +322,14 @@ footer p {
 }
 
 .home .banner.full h1 {
+    font-family: 'Delius', cursive;
     background-color: #3f3f3f;
     clear: both;
     color: #ffffff;
     font-size: 28px;
     font-weight: 300;
     left: 50%;
-    margin-left: -160px;
+    margin-left: -220px;
     margin-top: -30px;
     padding: 5px 20px;
     position: absolute;
@@ -320,6 +338,7 @@ footer p {
 }
 
 .home .banner.full h2 {
+    font-family: 'Delius', cursive;
     color: #ff1c6e;
     font-size: 24px;
 }
@@ -337,11 +356,13 @@ footer p {
 }
 
 .promo h3 {
+    font-family: 'Delius Unicase', cursive;
     background-color: #01cdec;
     margin-top: 0;
     padding: 8px 0;
     text-align: center;
-    text-transform: uppercase; 
+    font-weight: 400;
+    /*text-transform: uppercase; */
 }
 
 .banner.full.upper-elementary {
@@ -362,6 +383,7 @@ footer p {
 }
 
 .levels .featured h2 {
+    font-family: 'Delius', cursive;
     background-color: #3f3f3f;
     color: #fff;
     display: inline-block;

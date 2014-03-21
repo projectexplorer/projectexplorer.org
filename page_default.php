@@ -21,7 +21,7 @@
                 </a>
                 <h3>
                     <a href="/levels/upper-elementary">
-                        Upper elementary
+                        Upper Elementary
                     </a>
                 </h3>
             </div>
