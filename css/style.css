@@ -1,6 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700);
 @import url(http://fonts.googleapis.com/css?family=Oswald:300);
 @import url(http://fonts.googleapis.com/css?family=Delius|Delius+Unicase:400,700);
+@import url(http://fonts.googleapis.com/css?family=Give+You+Glory);
 
 * {
     margin:0;
@@ -439,6 +440,22 @@ footer p {
     font-size: 21px;
     width: 100%;
 }
+
+.signature {
+    font-size: 36px;
+    font-family: "Give You Glory", cursive;
+}
+
+.signature.high-school {
+    color: #6eae2f;
+}
+.signature.middle-school {
+    color: #7d669f;
+}
+.signature.upper-elementary {
+    color: #01cdec;
+}
+
 
 img.social {
     margin-right: 10px;
