@@ -444,16 +444,7 @@ footer p {
 .signature {
     font-size: 36px;
     font-family: "Give You Glory", cursive;
-}
-
-.signature.high-school {
-    color: #6eae2f;
-}
-.signature.middle-school {
-    color: #7d669f;
-}
-.signature.upper-elementary {
-    color: #01cdec;
+    color: #00b6c2;
 }
 
 
