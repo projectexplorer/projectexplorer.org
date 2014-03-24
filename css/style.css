@@ -41,6 +41,13 @@ h3 {
     margin: 1em 0 0.75em 0;
 }
 
+h4 {
+    font-family: "Roboto Slab", serif;
+    font-size: 20px;
+    line-height: 1.25em;
+    margin: 1em 0 0.75em 0;
+}
+
 p {
     margin-bottom: 24px;
 }
@@ -439,6 +446,16 @@ footer p {
 .sidebar--about .button {
     font-size: 21px;
     width: 100%;
+}
+
+.sidebar--about h3 {
+    font-size:20px;
+}
+.sidebar--about .hilite {
+    font-family: Oswald;
+    text-transform: uppercase;
+    color: #00b6c2;
+    font-size:22px;
 }
 
 .signature {

@@ -9,7 +9,10 @@
     		<txp:article form="about_detail" />
     	</article>
 	<txp:else />
-		<div class="wrapper">
+		<article>
+			<txp:article limit="1" form="about_detail" status="sticky" />
+		</article>
+		<!--<div class="wrapper">
 			<div class="twothird">
 				<h2>Our Mission</h2>
 				<p>To bring the world into the classroom with free multimedia content and lesson plans that improve students' global awareness and cross cultural understanding.</p>
@@ -29,13 +32,15 @@
 				<p class="footnote">*ProjectExplorer LTD. is a 501(c) non-profit organization incorporated in New York.</p>
 			</div>
 			<div class="sidebar sidebar--about third last">
-				<a href="https://npo.justgive.org/nonprofits/donate.jsp?ein=56-2380398" class="button">Donate Now</a>
+				<p><a href="https://npo.justgive.org/nonprofits/donate.jsp?ein=56-2380398" class="button">Donate Now</a></p>
+				<!-- videos --
+				
+				<!-- text --
+				<p>here is where the text goes</p>
 			</div>	
-		</div>
+		</div> -->
 	</txp:if_individual_article>
-			
-		</article>
-		
+
 	<?php include('includes/include-footer.php') ?>
 	
 	<?php include('includes/include-scripts.php') ?>
