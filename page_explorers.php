@@ -13,8 +13,8 @@
 
     	<txp:else />
             <div class="explorers">
-    		  <h2>Explorers</h2>
-    		  <txp:article form="explorers_list" limit="50" pgonly="0" status="live" />
+    		  <h2><txp:section title="1" /></h2>
+    		  <txp:article form="explorers_list" limit="50" pgonly="0" />
             </div>
 
     	</txp:if_individual_article>
