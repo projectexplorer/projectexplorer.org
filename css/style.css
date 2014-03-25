@@ -138,13 +138,17 @@ article h2 {
 }
 
 aside h3 {
-    font-size: 16px;
+    font-size: 18px;
     margin-bottom: 4px;
     margin-top: 32px;   
 }
 
+aside figcaption {
+    font-size: 16px;
+}
+
 aside h3:first-child {
-    margin-bottom: 2px;
+    margin-bottom: 6px;
     margin-top: 10px;
 }
 

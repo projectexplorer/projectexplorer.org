@@ -1,3 +1,8 @@
+<!-- header script initializations -->
+<script type="text/javascript">
+    var videos = [];
+</script>
+
 <header>
 	<div class="wrapper">
             <h1 class="third"><a href="/">ProjectExplorer</a></h1>

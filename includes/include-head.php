@@ -12,7 +12,7 @@
 	<meta name="description" content="">
 	<meta name="keywords" content="" />
 	<meta name="author" content="">
-	<meta name="viewport" content="width=device-width; initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="apple-touch-icon" sizes="114x114" href="/img/icon_iphone4-precomposed.png" />
 	<!-- !CSS -->
 	<link rel="stylesheet" href="/css/normalize.css">
