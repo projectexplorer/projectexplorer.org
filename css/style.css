@@ -389,12 +389,16 @@ footer p {
     background-color: #6eae2f;
 }
 
+.promo.teachers-item h3, .banner.full.teachers {
+    background-color: #ed6724;
+}
+
 .promo h3 a {
     color: #ffffff;
     text-decoration: none;
 }
 
-.levels .featured h2 {
+.levels .featured h2, .teachers .featured h2 {
     font-family: 'Delius', cursive;
     background-color: #3f3f3f;
     color: #fff;
