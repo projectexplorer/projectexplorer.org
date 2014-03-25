@@ -394,7 +394,7 @@ footer p {
     text-decoration: none;
 }
 
-.levels .featured h2 {
+.levels .featured h2, .teachers .featured h2 {
     font-family: 'Delius', cursive;
     background-color: #3f3f3f;
     color: #fff;
