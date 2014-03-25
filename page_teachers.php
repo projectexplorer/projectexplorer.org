@@ -8,7 +8,7 @@
         <txp:if_section name="teachers">
 
             <article>
-                <txp:article_custom id="554" form="levels_detail" />
+                <txp:article_custom id="629" form="levels_detail" />
             </article>
 
         <txp:else />
