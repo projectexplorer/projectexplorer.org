@@ -12,7 +12,7 @@
 	function getRelatedVideo() {
 		var vimeoInfo;
 		var vimeoUrl = "http://vimeo.com/api/v2/video/";
-		console.log(videos);
+
 		for (var i=0; i<videos.length; ++i){
 			//get info for the video
 			  $.ajax({
@@ -35,7 +35,6 @@
 			vidtitle = vidtitle.substring(0,fromindex);
 		}
 
-		console.log($("#" + obj[0].id).find("figcaption"));
 		$("#" + obj[0].id).find("figcaption").html(vidtitle);
 	}
 
