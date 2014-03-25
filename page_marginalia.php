@@ -2,7 +2,7 @@
 
 <body class="<?php echo $sectionLocation ?>">
 
-	<txp:article form="default" pgonly="0" searchall="0" />
+	<txp:article form="marginalia_form" pgonly="0" searchall="0" />
 
 </body>
 </html>

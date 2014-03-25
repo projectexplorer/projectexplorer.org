@@ -177,7 +177,6 @@ figcaption {
     margin-top: -6px;
 }
 
-
 footer {
     background-color: #00b6c2;
     clear: both;
@@ -211,6 +210,31 @@ footer p {
     font-size: 12px;
     line-height: 6px;
 }
+
+.keywordtitle {
+    line-height: 2em;
+    background-color: #00b6c2;
+    color:#ffffff;
+}
+
+.keywordtitle p {
+    font-family: 'Oswald', sans-serif;
+    padding: 8px;
+    font-size:2em;
+    position: relative;
+    text-align: center;
+}
+
+.keywordimg img {
+    width: auto;
+    height: 100%;
+    max-width: 50%;
+    display: table-cell;
+    float:left;
+    margin-right: 5%;
+    margin-bottom: 3%;
+}
+
 
 .wrapper {
     margin: 0 auto;
@@ -278,6 +302,7 @@ footer p {
     position: relative;
     text-align: center;
 }
+
 
 .banner.full {
     clear: left;
