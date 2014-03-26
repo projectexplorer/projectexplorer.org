@@ -1,8 +1,8 @@
 <?php
 
-include('includes/database.php');
+include('includes/db.php');
 include('includes/pre.php');
-include('includes/user.php');
+include('includes/users.php');
 
 if ($_POST[submit]) {
 	user_change_email ($_POST[password1],$_POST[new_email],$_POST[change_user_name]);

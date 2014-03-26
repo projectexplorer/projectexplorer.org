@@ -1,9 +1,8 @@
 <?php
 
-include('includes/database.php');
+include('includes/db.php');
 include('includes/pre.php');
-include('includes/user.php');
-
+include('includes/users.php');
 
 	user_logout();
 	$user_name='';

@@ -1,8 +1,8 @@
 <?php
 
-include('includes/database.php');
+include('includes/db.php');
 include('includes/pre.php');
-include('includes/user.php');
+include('includes/users.php');
 
 if (user_isloggedin()) {
 	user_logout();
