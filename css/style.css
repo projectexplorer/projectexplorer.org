@@ -230,8 +230,8 @@ footer p {
     height: 100%;
     max-width: 50%;
     display: table-cell;
-    float:left;
-    margin-right: 5%;
+    float:right;
+    margin-left: 5%;
     margin-bottom: 3%;
 }
 
