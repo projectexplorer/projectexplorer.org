@@ -1,22 +1,8 @@
 <?php
 //
-// SourceForge: Breaking Down the Barriers to Open Source Development
-// Copyright 1999-2000 (c) The SourceForge Crew
-// http://sourceforge.net
-//
-// $Id: database.php,v 1.6 2000/04/11 14:17:13 cvs Exp $
-//
-// /etc/local.inc includes the machine specific database connect info
 
-//$sys_dbhost='db46.perfora.net';
-$sys_dbhost="mysql.projectexplorer.org";
-//$sys_dbuser='dbo89150792';
-$sys_dbuser="pedbuser";
-//$sys_dbpasswd='H7MuzzJX';
-$sys_dbpasswd="home32e";
-//$sys_dbname='db89150792';
-$sys_dbname="pedb212";
-//command line: mysql -u pedbuser -p -h mysql.projectexplorer.dreamhosters.com pedb212
+// requires pe_config.php in the same directory
+include("pe_config.php");
 
 function db_connect() {
 	global $sys_dbhost,$sys_dbuser,$sys_dbpasswd;

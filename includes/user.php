@@ -1,7 +1,5 @@
 <?php
 
-$hidden_hash_var='shakespeare4allTime';
-
 $LOGGED_IN=false;
 //clear it out in case someone sets it in the URL or something
 unset($LOGGED_IN);
