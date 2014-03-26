@@ -508,15 +508,19 @@ img.social {
     display: block;
 }
 
-/* Reponsive embeds from http://amobil.se/2011/11/responsive-embeds/ */
+/* Reponsive embeds adapted from http://amobil.se/2011/11/responsive-embeds/ */
 
 .embed-container {
     position: relative;
     padding-bottom: 51%;
     padding-top: 30px; /* IE6 workaround*/
+    margin-bottom: 24px;
     height: 0;
     overflow: hidden;
 }
+
+/* sidebar videos */
+figure.embed-container { padding-bottom: 46.5%; }
 
 .embed-container iframe,
 .embed-container object,
