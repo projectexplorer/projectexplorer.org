@@ -17,7 +17,7 @@ echo '
 	<p>Please provide us your new email address, and a confirmation email will be sent to you.</p>
 	<p>ProjectExplorer.org will not willfully disclose your personal information to any third party without first receiving your permission. See ProjectExplorer.org\'s <a href="/about/privacy">Privacy Policy</a> for more information.</p>
 
-  <form action="'. $PHP_SELF .'" method="POST" id="register" name="register">
+  <form action="'. $PHP_SELF .'" method="POST" id="changeemail" name="changeemail">
 	<fieldset>
   <label for="change_user_name" class="required">User Name</label>
 	<input type="text" id="change_user_name" name="change_user_name" value="'. $_POST[change_user_name] .'">
