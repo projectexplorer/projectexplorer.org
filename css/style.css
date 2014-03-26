@@ -560,7 +560,7 @@ label.required:after   {content:": *";}
         margin-left: 0;
     }
     .embed-container { padding-bottom: 49.5%; }
-    figure.embed-container { padding-bottom: 44.5%; }  
+    figure.embed-container { padding-bottom: 43.5%; }  
 }
 
 @media (max-width: 600px) {
