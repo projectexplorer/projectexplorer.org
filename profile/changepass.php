@@ -14,12 +14,13 @@ if ($_POST[submit]) {
 }
 
 
-if ($feedback) {
-	echo '<p><span class="error">'.$feedback.'</span></p>';
-}
+  if ($GLOBALS['feedback']) {
+    echo '<p class="error">'.$GLOBALS['feedback'].'</p>';
+    unset($GLOBALS['feedback']);
+  }
 
 echo '
-	<form action="'. $PHP_SELF .'" method="POST" id="register" name="register">
+	<form action="/about/changepass" method="POST" id="changepass" name="changepass">
   <fieldset>
 	<label for="change_user_name" class="required">User Name</label>
 	<input type="text" name="change_user_name" value="'.$_POST[user_name].'">
@@ -29,7 +30,7 @@ echo '
 	<input type="password" name="new_password1">
 	<label for="new_password2" class="required">NEW Password (again)</label>
 	<input type="password" name="new_password2">
-  <input type="button" name="submit" id="submit" value="Change My Password">
+  <input type="submit" name="submit" id="submit" value="Change My Password">
   </fieldset>
   </form>';
 

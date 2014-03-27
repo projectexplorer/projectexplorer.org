@@ -14,8 +14,6 @@ else
   $return_url = $_POST[url];
 }
 
-echo "return url = ". $return_url;
-
 if ($_POST[submit]) {
   $didlogin = user_login($_POST[user_name],$_POST[password],$sys_dbname);
   if ($didlogin) {
@@ -29,9 +27,10 @@ if ($_POST[submit]) {
 // 	return true;
 // }
 
-if ($feedback) {
-	echo '<p><span class="error">'.$feedback.'</span></p>';
-}
+  if ($GLOBALS['feedback']) {
+    echo '<p class="error">'.$GLOBALS['feedback'].'</p>';
+    unset($GLOBALS['feedback']);
+  }
 
 if (!$_POST[url]) {
 	$return_url = isset($_SERVER{'HTTP_REFERER'}) ? $_SERVER{'HTTP_REFERER'} : "/about/profile";

@@ -1,7 +1,4 @@
 <?php 
-	$sectionLocation="teachers"; 
-	$pageLocation="teachers"; 
-	include('includes/include-head.php'); 
 
 	include('includes/db.php');
 	include('includes/pre.php');
@@ -16,8 +13,9 @@
 		user_register($_POST[user_name],$_POST[password1],$_POST[password2],$_POST[first],$_POST[last],$_POST[job],$_POST[level],$_POST[classsize],$_POST[orgname],$_POST[address],$_POST[address2],$_POST[city],$_POST[state],$_POST[zip],$_POST[country],$_POST[email],$_POST[se_topics],$_POST[future_loc],$_POST[comments],$_POST[optout]);
 	}
 			
-	if ($feedback) {
-		echo '<div class="error">'.$feedback.'</div>';
+	if ($GLOBALS['feedback']) {
+		echo '<p class="error">'.$GLOBALS['feedback'].'</p>';
+		unset($GLOBALS['feedback']);
 	}
 	if (!$country) {
 		$country="USA";
@@ -28,7 +26,7 @@
 	<p>We look forward to welcoming you on our travels.</p>
 	';
 
-	echo '<FORM ACTION="'. $PHP_SELF .'" METHOD="POST" id="register" name="register">
+	echo '<FORM ACTION="/about/teacher-registration" METHOD="POST" id="register" name="register">
 			<fieldset>
 			<label for="user_name" class="required">User Name</label>
 			<input type="text" name="user_name" id="user_name" value="'. $_POST[user_name] .'" maxlength="15">
@@ -94,7 +92,7 @@
 			<label for="comments" class="textarealabel">Any other comments? (Please do not leave questions in this area.)</label>
 			<textarea name="comments">'. stripslashes($_POST[comments]) .'</textarea>
 
-			<input type="button" name="submit" id="submit" value="Register">
+			<input type="submit" name="submit" id="submit" value="Register">
 			</fieldset>
 			</form>
 
