@@ -575,6 +575,10 @@ label.required:after   {content:": *";}
     header h1 a {
         margin: 0 auto;
     }
+    nav a {
+        display: block;
+        padding: 0;
+    }
     .wrapper {
         width: 95%;
     }
