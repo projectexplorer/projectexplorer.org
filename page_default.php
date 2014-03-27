@@ -48,7 +48,9 @@
         </section>
         <section class="half featured">
             <h2>Featured video</h2>
-            <iframe src="//player.vimeo.com/video/71038102?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="450" height="253" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <div class="embed-container">
+                <iframe src="//player.vimeo.com/video/71038102?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </div>
         </section>
         <section class="half featured last">
             <h2>What's new?</h2>
