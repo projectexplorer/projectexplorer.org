@@ -433,6 +433,9 @@ footer p {
     padding: 15px 20px;
 }
 
+/* keeps front page featured video from float conflict in mid resolutions */
+.home .half.featured:not(.last) { clear: left; }
+
 .explorers {
     clear: left;
 }
