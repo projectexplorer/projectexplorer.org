@@ -570,7 +570,7 @@ label.required:after   {content:": *";}
 
 @media (max-width: 600px) {
     header h1 {
-        margin-top: 20px;
+        margin-top: 0;
     }
     header h1 a {
         margin: 0 auto;
