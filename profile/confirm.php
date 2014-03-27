@@ -7,13 +7,14 @@ include('includes/users.php');
 if ($_GET[hash] && $_GET[email]) {
 	$worked=user_confirm($_GET[hash],$_GET[email]);
 } else {
-	$feedback = '<H1>ERROR - Missing Params</H1>';
+	$GLOBALS['feedback'] .= 'ERROR - Missing Params';
 }
 
 
-if ($feedback) {
-	echo '<p><span class="error">'.$feedback.'</span></p>';
-}
+  if ($GLOBALS['feedback']) {
+    echo '<p class="error">'.$GLOBALS['feedback'].'</p>';
+    unset($GLOBALS['feedback']);
+  }
 
 if ($worked) {
 	$querystring = "SELECT * FROM site_user WHERE email='$_GET[email]'";

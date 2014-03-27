@@ -469,6 +469,10 @@ footer p {
     font-size: 21px;
 }
 
+.error {
+    color:#FF0000;
+}
+
 .sidebar--about {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
