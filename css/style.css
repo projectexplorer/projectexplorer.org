@@ -600,4 +600,14 @@ label.required:after   {content:": *";}
 
     .embed-container, figure.embed-container { padding-bottom: 48.5%; }
     
+    .home .banner.full h1 {
+        margin: 0;
+        margin-bottom: 12px;
+        padding-left: 20%;
+        padding-right: 20%;
+        position: static;
+        text-align: center;
+        width: 60%;
+    }
+
 }
