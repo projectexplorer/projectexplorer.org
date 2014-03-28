@@ -28,6 +28,7 @@
 
 	function populateTitle(obj, parentid) {
 		var vidtitle = obj[0].title;
+		var vidthumb = obj[0].thumbnail_large;
 
 		var fromindex = vidtitle.toLowerCase().indexOf("from");
 
@@ -36,6 +37,7 @@
 		}
 
 		$("#" + obj[0].id).find("figcaption").html(vidtitle);
+		$("#" + obj[0].id).find("img").attr("src", vidthumb);
 	}
 
 	$(document).ready(function() {

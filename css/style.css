@@ -531,6 +531,7 @@ img.social {
 figure .embed-container { padding-bottom: 46.5%; }
 
 .embed-container iframe,
+.embed-container img,
 .embed-container object,
 .embed-container embed {
     position: absolute;
