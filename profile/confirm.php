@@ -7,13 +7,13 @@ include('includes/users.php');
 if ($_GET[hash] && $_GET[email]) {
 	$worked=user_confirm($_GET[hash],$_GET[email]);
 } else {
-	$GLOBALS['feedback'] .= 'ERROR - Missing Params';
+	$_SESSION['pe_feedback'] .= 'ERROR - Missing Params';
 }
 
 
-  if ($GLOBALS['feedback']) {
-    echo '<p class="error">'.$GLOBALS['feedback'].'</p>';
-    unset($GLOBALS['feedback']);
+  if ($_SESSION['pe_feedback']) {
+    echo '<p class="error">'.$_SESSION['pe_feedback'].'</p>';
+    unset($_SESSION['pe_feedback']);
   }
 
 if ($worked) {

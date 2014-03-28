@@ -14,9 +14,9 @@ if ($_POST[submit]) {
 }
 
 
-  if ($GLOBALS['feedback']) {
-    echo '<p class="error">'.$GLOBALS['feedback'].'</p>';
-    unset($GLOBALS['feedback']);
+  if ($_SESSION['pe_feedback']) {
+    echo '<p class="error">'.$_SESSION['pe_feedback'].'</p>';
+    unset($_SESSION['pe_feedback']);
   }
 
 echo '

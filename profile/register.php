@@ -13,9 +13,9 @@
 		user_register($_POST[user_name],$_POST[password1],$_POST[password2],$_POST[first],$_POST[last],$_POST[job],$_POST[level],$_POST[classsize],$_POST[orgname],$_POST[address],$_POST[address2],$_POST[city],$_POST[state],$_POST[zip],$_POST[country],$_POST[email],$_POST[se_topics],$_POST[future_loc],$_POST[comments],$_POST[optout]);
 	}
 			
-	if ($GLOBALS['feedback']) {
-		echo '<p class="error">'.$GLOBALS['feedback'].'</p>';
-		unset($GLOBALS['feedback']);
+	if ($_SESSION['pe_feedback']) {
+		echo '<p class="error">'.$_SESSION['pe_feedback'].'</p>';
+		unset($_SESSION['pe_feedback']);
 	}
 	if (!$country) {
 		$country="USA";

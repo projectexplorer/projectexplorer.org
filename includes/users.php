@@ -50,7 +50,7 @@ function user_login($user_name,$password,$dbname) {
 
 
 	if (!$user_name || !$password) {
-		echo ' ERROR - Missing user name or password ';
+		$_SESSION['pe_feedback'] .= ' ERROR - Missing user name or password ';
 		return false;
 	} else {
 		$user_name=strtolower($user_name);
@@ -59,20 +59,20 @@ function user_login($user_name,$password,$dbname) {
 
 		$result=db_query($sql, $dbname);
 		if (!$result || db_numrows($result) < 1){
-			echo ' ERROR - User not found ';
+			$_SESSION['pe_feedback'] .= ' ERROR - User not found ';
 			return false;
 		} else {
 			if (db_result($result,0,'password') != md5($password)) {
-				echo ' ERROR - Incorrect password ';
+				$_SESSION['pe_feedback'] .= ' ERROR - Incorrect password ';
 				return false;
 			} else { 
 			if (db_result($result,0,'is_confirmed') == '1') {
 				user_set_tokens($user_name);
-				echo ' SUCCESS - You Are Now Logged In ';
+				$_SESSION['pe_feedback'] .= ' SUCCESS - You Are Now Logged In ';
 				$LOGGED_IN = true;
 				return true;
 			} else {
-				$GLOBALS['feedback'] .=  ' ERROR - You haven\'t Confirmed Your Account Yet ';
+				$_SESSION['pe_feedback'] .=  ' ERROR - You haven\'t Confirmed Your Account Yet ';
 				return false;
 			}
 		}
@@ -87,7 +87,7 @@ function user_logout() {
 function user_set_tokens($user_name_in) {
 	global $user_name,$id_hash;
 	if (!$user_name_in) {
-		$GLOBALS['feedback'] =  ' ERROR - User Name Missing When Setting Tokens ';
+		$_SESSION['pe_feedback'] =  ' ERROR - User Name Missing When Setting Tokens ';
 		return false;
 	}
 	$user_name=strtolower($user_name_in);
@@ -112,7 +112,7 @@ function user_confirm($hash,$email) {
 		$sql="SELECT * FROM site_user WHERE confirm_hash='$hash'";
 		$result=db_query($sql);
 		if (!$result || db_numrows($result) < 1) {
-			$GLOBALS['feedback'] = ' ERROR - User Not Found ';
+			$_SESSION['pe_feedback'] = ' ERROR - User Not Found ';
 			return false;
 		} else {
 			//confirm the email and set account to active
@@ -122,7 +122,7 @@ function user_confirm($hash,$email) {
 			return true;
 		}
 	} else {
-		$GLOBALS['feedback'] = ' HASH INVALID - UPDATE FAILED ';
+		$_SESSION['pe_feedback'] = ' HASH INVALID - UPDATE FAILED ';
 		return false;
 	}
 }
@@ -141,31 +141,31 @@ function user_change_password ($new_password1,$new_password2,$change_user_name,$
 				$sql="SELECT * FROM site_user WHERE username='$change_user_name' AND password='". md5($old_password) ."'";
 				$result=db_query($sql);
 				if (!$result || db_numrows($result) < 1) {
-					$GLOBALS['feedback'] = ' User not found or bad password '.db_error();
+					$_SESSION['pe_feedback'] = ' User not found or bad password '.db_error();
 					return false;
 				} else {
 					$sql="UPDATE site_user SET password='". md5($new_password1). "' ".
 						"WHERE username='$change_user_name' AND password='". md5($old_password). "'";
 					$result=db_query($sql);
 					if (!$result || db_affected_rows($result) < 1) {
-						$GLOBALS['feedback'] = ' NOTHING Changed '.db_error();
+						$_SESSION['pe_feedback'] = ' NOTHING Changed '.db_error();
 						return false;
 					} else {
-						$GLOBALS['feedback'] = ' Password Changed ';
+						$_SESSION['pe_feedback'] = ' Password Changed ';
 						return true;
 					}
 				}
 			} else {
-				$GLOBALS['feedback'] = ' Must Provide User Name And Old Password ';
+				$_SESSION['pe_feedback'] = ' Must Provide User Name And Old Password ';
 				return false;
 			}
 		} else {
-			$GLOBALS['feedback'] = ' New Password Does Not Meet Criteria ';
+			$_SESSION['pe_feedback'] = ' New Password Does Not Meet Criteria ';
 			return false;
 		}
 	} else {
 		return false;
-		$GLOBALS['feedback'] = ' New Passwords Must Match ';
+		$_SESSION['pe_feedback'] = ' New Passwords Must Match ';
 	}
 }
 
@@ -176,7 +176,7 @@ function user_lost_password ($email) {
 		$result=db_query($sql);
 		if (!$result || db_numrows($result) < 1) {
 			//no matching user found
-			$GLOBALS['feedback'] = ' We did not find a user with that email address. Please try again or <a href="/profile/register.php>register as a new user</a>. ';
+			$_SESSION['pe_feedback'] = ' We did not find a user with that email address. Please try again or <a href="/profile/register.php>register as a new user</a>. ';
 			return false;
 		} else {
 			//create a secure, new password
@@ -188,11 +188,11 @@ function user_lost_password ($email) {
 			//send a simple email with the new password
 			mail ($email,'Password Reset Notification from ProjectExplorer.org','The password for '. $user_name .' at ProjectExplorer.org '.
 				'has been reset to: '. $new_pass . "\n \n Please use this new password the next time you visit http://projectexplorer.org, and be sure to reset your password at your earliest convenience at http://projectexplorer.org/profile/changepass.php.",'From: register@projectexplorer.org');
-			$GLOBALS['feedback'] = ' Your new password has been emailed to you. ';
+			$_SESSION['pe_feedback'] = ' Your new password has been emailed to you. ';
 			return true;
 		}
 	} else {
-		$GLOBALS['feedback'] = ' A valid email address is required to retrieve your password. ';
+		$_SESSION['pe_feedback'] = ' A valid email address is required to retrieve your password. ';
 		return false;
 	}
 }
@@ -208,15 +208,15 @@ function user_change_email ($password1,$new_email,$user_name) {
 		$sql="UPDATE site_user SET confirm_hash='$hash' WHERE username='$user_name' AND password='". md5($password1) ."'";
 		$result=db_query($sql);
 		if (!$result || db_affected_rows($result) < 1) {
-			$GLOBALS['feedback'] = ' ERROR - Incorrect User Name Or Password ';
+			$_SESSION['pe_feedback'] = ' ERROR - Incorrect User Name Or Password ';
 			return false;
 		} else {
-			$GLOBALS['feedback'] = ' Confirmation Sent ';
+			$_SESSION['pe_feedback'] = ' Confirmation Sent ';
 			user_send_confirm_email($new_email,$hash);
 			return true;
 		}
 	} else {
-		$GLOBALS['feedback'] = ' New Email Address Appears Invalid ';
+		$_SESSION['pe_feedback'] = ' New Email Address Appears Invalid ';
 		return false;
 	}
 }
@@ -258,7 +258,7 @@ function user_register($user_name,$password1,$password2,$first,$last,$job,$level
 			$sql="SELECT * FROM site_user WHERE email='$email'";
 			$result=db_query($sql);
 			if ($result && db_numrows($result) > 0) {
-				$GLOBALS['feedback'] =  ' ERROR - Someone has already registered with that email address. ';
+				$_SESSION['pe_feedback'] =  ' ERROR - Someone has already registered with that email address. ';
 				return false;
 			} else {
 				//create a new hash to insert into the db and the confirmation email
@@ -299,77 +299,77 @@ function user_register($user_name,$password1,$password2,$first,$last,$job,$level
 					"VALUES ('$user_name','$password','$first','$last','$jobstr','$levelstr',$classsize,'$orgname','$address','$address2','$city','$state','$zip','$country','$email','$se_topics','$future_loc','$comments','$optout','$GLOBALS[REMOTE_ADDR]','$hash','0')";
 				$result=db_query($sql);
 				if (!$result) {
-					$GLOBALS['feedback'] = ' ERROR - '.db_error();
+					$_SESSION['pe_feedback'] = ' ERROR - '.db_error();
 					return false;
 				} else {
 					//send the confirm email
 					user_send_confirm_email($email,$hash);
-					$GLOBALS['feedback'] = 'You have successfully registered. Check your email for a message from us, and confirm your registration.<br />Be sure and check your Spam Folder, and add us to your address book so you don\'t miss any news!';
+					$_SESSION['pe_feedback'] = 'You have successfully registered. Check your email for a message from us, and confirm your registration.<br />Be sure and check your Spam Folder, and add us to your address book so you don\'t miss any news!';
 					return true;
 				}
 			} // end else: safe email
 		} else {
-			$GLOBALS['feedback'] =  ' Account Name or Password Invalid ';
+			$_SESSION['pe_feedback'] =  ' Account Name or Password Invalid ';
 			return false;
 		}
 	  } else {
-		  $GLOBALS['feedback'] =  ' ERROR - Please retype your password, making sure both passwords match.';
+		  $_SESSION['pe_feedback'] =  ' ERROR - Please retype your password, making sure both passwords match.';
 		  return false;
 	  }
 	} else {
-		$GLOBALS['feedback'] = ' ERROR - User must complete all required fields, marked with a "*".';   
+		$_SESSION['pe_feedback'] = ' ERROR - User must complete all required fields, marked with a "*".';   
 		return false;
 	}
 }
 
 
 function user_getid() {
-	global $G_USER_RESULT;
+	
 	//see if we have already fetched this user from the db, if not, fetch it
-	if (!$G_USER_RESULT) {
-		$G_USER_RESULT=db_query("SELECT * FROM site_user WHERE username='" . user_getname() . "'");
+	if (!$_SESSION['PE_USER_RESULT']) {
+		$_SESSION['PE_USER_RESULT']=db_query("SELECT * FROM site_user WHERE username='" . user_getname() . "'");
 	}
-	if ($G_USER_RESULT && db_numrows($G_USER_RESULT) > 0) {
-		return db_result($G_USER_RESULT,0,'user_id');
+	if ($_SESSION['PE_USER_RESULT'] && db_numrows($_SESSION['PE_USER_RESULT']) > 0) {
+		return db_result($_SESSION['PE_USER_RESULT'],0,'user_id');
 	} else {
 		return false;
 	}
 }
 
 function user_getfirstname() {
-	global $G_USER_RESULT;
+	
 	//see if we have already fetched this user from the db, if not, fetch it
-	if (!$G_USER_RESULT) {
-		$G_USER_RESULT=db_query("SELECT * FROM site_user WHERE username='" . user_getname() . "'");
+	if (!$_SESSION['PE_USER_RESULT']) {
+		$_SESSION['PE_USER_RESULT']=db_query("SELECT * FROM site_user WHERE username='" . user_getname() . "'");
 	}
-	if ($G_USER_RESULT && db_numrows($G_USER_RESULT) > 0) {
-		return stripslashes(db_result($G_USER_RESULT,0,'first'));
+	if ($_SESSION['PE_USER_RESULT'] && db_numrows($_SESSION['PE_USER_RESULT']) > 0) {
+		return stripslashes(db_result($_SESSION['PE_USER_RESULT'],0,'first'));
 	} else {
 		return false;
 	}
 }
 
 function user_getlastname() {
-	global $G_USER_RESULT;
+	
 	//see if we have already fetched this user from the db, if not, fetch it
-	if (!$G_USER_RESULT) {
-		$G_USER_RESULT=db_query("SELECT * FROM site_user WHERE username='" . user_getname() . "'");
+	if (!$_SESSION['PE_USER_RESULT']) {
+		$_SESSION['PE_USER_RESULT']=db_query("SELECT * FROM site_user WHERE username='" . user_getname() . "'");
 	}
-	if ($G_USER_RESULT && db_numrows($G_USER_RESULT) > 0) {
-		return stripslashes(db_result($G_USER_RESULT,0,'last'));
+	if ($_SESSION['PE_USER_RESULT'] && db_numrows($_SESSION['PE_USER_RESULT']) > 0) {
+		return stripslashes(db_result($_SESSION['PE_USER_RESULT'],0,'last'));
 	} else {
 		return false;
 	}
 }
 
 function user_getemail() {
-	global $G_USER_RESULT;
+	
 	//see if we have already fetched this user from the db, if not, fetch it
-	if (!$G_USER_RESULT) {
-		$G_USER_RESULT=db_query("SELECT * FROM site_user WHERE username='" . user_getname() . "'");
+	if (!$_SESSION['PE_USER_RESULT']) {
+		$_SESSION['PE_USER_RESULT']=db_query("SELECT * FROM site_user WHERE username='" . user_getname() . "'");
 	}
-	if ($G_USER_RESULT && db_numrows($G_USER_RESULT) > 0) {
-		return db_result($G_USER_RESULT,0,'email');
+	if ($_SESSION['PE_USER_RESULT'] && db_numrows($_SESSION['PE_USER_RESULT']) > 0) {
+		return db_result($_SESSION['PE_USER_RESULT'],0,'email');
 	} else {
 		return false;
 	}
@@ -387,7 +387,7 @@ function user_getname() {
 function account_pwvalid($pw) {
 	//feedbackwashere;
 	if (strlen($pw) < 6) {
-		$GLOBALS['feedback'] = " Password must be at least 6 characters. ";
+		$_SESSION['pe_feedback'] = " Password must be at least 6 characters. ";
 		return false;
 	}
 	return true;
@@ -397,30 +397,30 @@ function account_namevalid($name) {
 	//feedbackwashere;
 	// no spaces
 	if (strrpos($name,' ') > 0) {
-		$GLOBALS['feedback'] = " There cannot be any spaces in the login name. ";
+		$_SESSION['pe_feedback'] = " There cannot be any spaces in the login name. ";
 		return false;
 	}
 
 	// must have at least one character
 	if (strspn($name,"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ") == 0) {
-		$GLOBALS['feedback'] = "There must be at least one character.";
+		$_SESSION['pe_feedback'] = "There must be at least one character.";
 		return false;
 	}
 
 	// must contain all legal characters
 	if (strspn($name,"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_")
 		!= strlen($name)) {
-		$GLOBALS['feedback'] = " Illegal character in name. ";
+		$_SESSION['pe_feedback'] = " Illegal character in name. ";
 		return false;
 	}
 
 	// min and max length
 	if (strlen($name) < 5) {
-		$GLOBALS['feedback'] = " Name is too short. It must be at least 5 characters. ";
+		$_SESSION['pe_feedback'] = " Name is too short. It must be at least 5 characters. ";
 		return false;
 	}
 	if (strlen($name) > 15) {
-		$GLOBALS['feedback'] = "Name is too long. It must be less than 15 characters.";
+		$_SESSION['pe_feedback'] = "Name is too long. It must be less than 15 characters.";
 		return false;
 	}
 
@@ -428,11 +428,11 @@ function account_namevalid($name) {
 	if (preg_match("/^((root)|(bin)|(daemon)|(adm)|(lp)|(sync)|(shutdown)|(halt)|(mail)|(news)"
 		. "|(uucp)|(operator)|(games)|(mysql)|(httpd)|(nobody)|(dummy)"
 		. "|(www)|(cvs)|(shell)|(ftp)|(irc)|(debian)|(ns)|(download))$/i",$name)) {
-		$GLOBALS['feedback'] = "Name is reserved.";
+		$_SESSION['pe_feedback'] = "Name is reserved.";
 		return 0;
 	}
 	if (preg_match("/^(anoncvs_)/i",$name)) {
-		$GLOBALS['feedback'] = "Name is reserved.";
+		$_SESSION['pe_feedback'] = "Name is reserved.";
 		return false;
 	}
 
