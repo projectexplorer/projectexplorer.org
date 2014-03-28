@@ -116,7 +116,7 @@ function user_confirm($hash,$email) {
 			return false;
 		} else {
 			//confirm the email and set account to active
-			user_set_tokens(db_result($result,0,'user_name'));
+			user_set_tokens(db_result($result,0,'username'));
 			$sql="UPDATE site_user SET email='$email',is_confirmed='1' WHERE confirm_hash='$hash'";
 			$result=db_query($sql);
 			return true;
@@ -176,7 +176,7 @@ function user_lost_password ($email) {
 		$result=db_query($sql);
 		if (!$result || db_numrows($result) < 1) {
 			//no matching user found
-			$_SESSION['pe_feedback'] = ' We did not find a user with that email address. Please try again or <a href="/profile/register.php>register as a new user</a>. ';
+			$_SESSION['pe_feedback'] = ' We did not find a user with that email address. Please try again or <a href="/about/register">register as a new user</a>. ';
 			return false;
 		} else {
 			//create a secure, new password
@@ -187,7 +187,7 @@ function user_lost_password ($email) {
 			$result=db_query($sql);
 			//send a simple email with the new password
 			mail ($email,'Password Reset Notification from ProjectExplorer.org','The password for '. $user_name .' at ProjectExplorer.org '.
-				'has been reset to: '. $new_pass . "\n \n Please use this new password the next time you visit http://projectexplorer.org, and be sure to reset your password at your earliest convenience at http://projectexplorer.org/profile/changepass.php.",'From: register@projectexplorer.org');
+				'has been reset to: '. $new_pass . "\n \n Please use this new password the next time you visit http://projectexplorer.org, and be sure to reset your password at your earliest convenience at http://projectexplorer.org/about/changepass .",'From: register@projectexplorer.org');
 			$_SESSION['pe_feedback'] = ' Your new password has been emailed to you. ';
 			return true;
 		}
@@ -229,7 +229,7 @@ function user_send_confirm_email($email,$hash) {
 
 	$message = "Thank You For Registering with ProjectExplorer.".
 		"\nSimply follow this link to confirm your registration: ".
-		"\n\nhttp://www.projectexplorer.org/profile/confirm.php?hash=$hash&email=". urlencode($email).
+		"\n\nhttp://www.projectexplorer.org/about/confirm?hash=$hash&email=". urlencode($email).
 		"\n\nIf you have not registered, you can ignore this email, and no additional messages will be sent. If you have any questions, you can reply to this email and our staff will assist as soon as they can.";
 	mail ($email,'ProjectExplorer Registration Confirmation',$message,'From: register@projectexplorer.org');
 }

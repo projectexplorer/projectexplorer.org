@@ -45,11 +45,6 @@ if ($worked) {
 		<p>As a registered user, you have the option of receiving updates and news about our ongoing expeditions, and
 		also have access to discounts and offers provided by our sponsors and partners.</p>
 		
-		<h3>Be sure and register for our newsletters!</h3>
-		<p>To help protect your privacy, we use a newsletter system that lets
-		you manage how much email you want from ProjectExplorer.org. To get started, go to <a href="/about/profile">Manage your Profile</a> now.</p>
-		<p><strong>NOTE:</strong> If you have changed your email address, you will need to <strong>resubscribe</strong> using your profile page.</p>
-		
 		<p>We look forward to welcoming you on our travels, and thank you for your interest.</p>';
 	
 	echo '
