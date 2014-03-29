@@ -248,6 +248,7 @@ footer p {
     clear: both;
     height: 0;
 }
+.wrapper ul {margin-left:20px;}
 
 .full, .third, .half, .quarter {
     margin-bottom: 32px;
