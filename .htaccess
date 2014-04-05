@@ -4,6 +4,12 @@
 #Options -Indexes
 #ErrorDocument 403 default
 
+RedirectMatch ^/donate*  /about/donate
+RedirectMatch ^/me/* /levels/upper-elementary
+RedirectMatch ^/ms/* /levels/middle-school
+RedirectMatch ^/hs/* /levels/high-school
+RedirectMatch ^/ed/* /teachers/
+
 <IfModule mod_rewrite.c>
 	RewriteEngine On
 	#RewriteBase /relative/web/path/
