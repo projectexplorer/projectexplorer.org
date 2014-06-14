@@ -125,6 +125,11 @@ nav a:hover, nav a.current {
     color: #555;
 }
 
+nav a.teacherhighlight {
+    background-color: #ed6724;
+    color: #fff;
+}
+
 article h1 {
     margin-bottom: 8px;
 }
