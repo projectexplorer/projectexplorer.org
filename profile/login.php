@@ -41,9 +41,6 @@ else
 }
 
 echo '
-	<P>
-	Enter your user name and password to log in.
-	<P>
 
   <form action="/about/login" method="POST">
   <fieldset>

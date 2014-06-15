@@ -15,11 +15,6 @@
 
             <txp:else />
 
-                <section class="banner full">
-                    <h2>Upper Elementary</h2>
-                    <p><a href="/levels/" class="back-link">&larr; Go back to the Upper Elementary page</a></p>
-                </section>
-
         		<article>
         			<txp:article form="article_detail" />
         		</article>
