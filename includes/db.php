@@ -16,7 +16,8 @@ class user_db {
 		$this->user = $GLOBALS['pelogin_dbuser'];
 		$this->pass = $GLOBALS['pelogin_dbpasswd'];
 
-		$this->link = @mysql_connect($this->host, $this->user, $this->pass);
+		$this->link = @mysql_connect($this->host, $this->user, $this->pass, true);
+		//true above forces a new connection
 		if (!$this->link) die("no link");
 
 		$this->version = mysql_get_server_info();
@@ -88,6 +89,11 @@ function db_insertid($qhandle) {
 
 function db_error() {
 	return "\n\n<P><B>".@mysql_error()."</B><P>\n\n";
+}
+
+function db_close() {
+	$db = $GLOBALS['pelogin_database'];
+	mysql_close($db->link);
 }
 
 //connect to the db

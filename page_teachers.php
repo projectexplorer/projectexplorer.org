@@ -28,6 +28,7 @@
                     {
                            echo '<script type="text/javascript">window.location.href="/about/login?url='.$_SERVER["REQUEST_URI"].'";</script>';
                     }
+                    db_close();
                 ?>
 
 
