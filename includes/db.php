@@ -11,10 +11,10 @@ class user_db {
 		//global $sys_dbhost,$sys_dbname,$sys_dbuser,$sys_dbpasswd;
 		//die("info:" . $sys_dbhost . "!");
 
-		$this->host = $GLOBALS['sys_dbhost'];
-		$this->db	= $GLOBALS['sys_dbname'];
-		$this->user = $GLOBALS['sys_dbuser'];
-		$this->pass = $GLOBALS['sys_dbpasswd'];
+		$this->host = $GLOBALS['pelogin_dbhost'];
+		$this->db	= $GLOBALS['pelogin_dbname'];
+		$this->user = $GLOBALS['pelogin_dbuser'];
+		$this->pass = $GLOBALS['pelogin_dbpasswd'];
 
 		$this->link = @mysql_connect($this->host, $this->user, $this->pass);
 		if (!$this->link) die("no link");
@@ -27,7 +27,7 @@ class user_db {
 		@mysql_select_db($this->db) or die("db_down()" . $this->db . "!");
 	}
 }
-$GLOBALS['user_database'] = new user_db;
+$GLOBALS['pelogin_database'] = new user_db;
 
 // function db_connect() {
 // 	//global $sys_dbhost,$sys_dbuser,$sys_dbpasswd;
@@ -40,7 +40,7 @@ $GLOBALS['user_database'] = new user_db;
 // }
 
 function db_query($qstring,$print=0) {
-	$db = $GLOBALS['user_database'];
+	$db = $GLOBALS['pelogin_database'];
 	$result = mysql_query($qstring, $db->link);
 	if ($result === false) {
 		//trigger_error(mysql_error(), E_USER_ERROR);
