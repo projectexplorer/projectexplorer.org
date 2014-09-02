@@ -46,7 +46,7 @@
 		// add hooks to all links in the levels section to launch in FancyBox
 		$(".articles article a").attr("class","various").attr("data-fancybox-type","iframe");
 		// remove fancy box from the PDF links to lesson plans
-		$("a[href$=.pdf]").removeAttr("data-fancybox-type");
+		$("a[href$='.pdf']").removeAttr("data-fancybox-type");
 		// modal attributes
 		$(".various").fancybox({
 			//maxWidth	: 400,
