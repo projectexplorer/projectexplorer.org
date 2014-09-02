@@ -439,6 +439,11 @@ footer p {
     padding: 15px 20px;
 }
 
+/*make headers for lessons on teacher pages blue [Sep 2 2014 MTB]*/
+.lessons h3 { 
+    color: #00b6c2;
+}
+
 /* keeps front page featured video from float conflict in mid resolutions */
 .home .half.featured:not(.last) { clear: left; }
 
