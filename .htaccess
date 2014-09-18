@@ -14,6 +14,10 @@ RedirectMatch ^/ed/* /teachers/
 	RewriteEngine On
 	#RewriteBase /relative/web/path/
 
+	# hide git / svn from the world
+	RedirectMatch 404 /\\.git(/.*|$)
+	RedirectMatch 404 /\\.svn(/.*|$)
+
 	RewriteCond %{REQUEST_FILENAME} -f [OR]
 	RewriteCond %{REQUEST_FILENAME} -d
 	RewriteRule ^(.+) - [PT,L]
