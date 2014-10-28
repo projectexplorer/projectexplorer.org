@@ -370,15 +370,37 @@ footer p {
     background-color: #3f3f3f;
     clear: both;
     color: #ffffff;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 300;
-    left: 50%;
-    margin-left: -220px;
-    margin-top: -30px;
-    padding: 5px 20px;
-    position: absolute;
-    text-align: left;
+    margin-bottom: 20px;
+    /*left: 50%;
     top: 30%;
+    margin-left: -220px;
+    margin-top: -30px;*/
+}
+
+.home .banner.full .half-left {
+    /*padding: 5px 20px;*/
+    position: absolute;
+    text-align: center;
+    float: left;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top:40px;
+    width: 40%;
+    background: rgba(255,255,255,0.6);
+}
+
+.home .banner.full .half-right {
+    /*padding: 5px 20px;*/
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top:40px;
+    width: 40%;
+    background: rgba(255,255,255,0.6);
 }
 
 .home .banner.full h2 {

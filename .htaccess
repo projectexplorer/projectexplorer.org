@@ -4,6 +4,7 @@
 #Options -Indexes
 #ErrorDocument 403 default
 
+Redirect permanent /10million /about/10million
 RedirectMatch ^/donate*  /about/donate
 RedirectMatch ^/me/* /levels/upper-elementary
 RedirectMatch ^/ms/* /levels/middle-school
