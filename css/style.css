@@ -104,7 +104,7 @@ header h1 a {
     max-height: 48px;
     max-width: 195px;
     overflow: hidden;
-    text-indent: 100%;
+    text-indent: 200%;
     white-space: nowrap;
 }
 
@@ -214,7 +214,7 @@ footer .last ul {
 
 footer p {
     font-size: 12px;
-    line-height: 6px;
+    line-height: 1em;
 }
 
 .keywordtitle {
@@ -314,6 +314,7 @@ footer p {
 .banner.full {
     clear: left;
     margin-top: -20px;
+    margin-bottom: 4px;
     padding: 10px 0 15px 0;
 }
 .banner.full:after {
@@ -372,12 +373,22 @@ footer p {
     color: #ffffff;
     font-size: 24px;
     font-weight: 300;
+    line-height: 1.2em;
     margin-bottom: 20px;
-    /*left: 50%;
-    top: 30%;
-    margin-left: -220px;
-    margin-top: -30px;*/
+    padding:10px;
+    /*left: 7%;
+    top: 0%;
+    /*margin-left: -220px;
+    margin-top: -30px;*
+    position:absolute;
+    padding: 5px 20px;*/
 }
+
+.banner a {
+    color:#3f3f3f;
+}
+
+
 
 .home .banner.full .half-left {
     /*padding: 5px 20px;*/
@@ -386,7 +397,7 @@ footer p {
     float: left;
     margin-right: 5%;
     margin-left: 5%;
-    margin-top:40px;
+    margin-top:3%;
     width: 40%;
     background: rgba(255,255,255,0.6);
 }
@@ -398,15 +409,60 @@ footer p {
     left: 50%;
     margin-right: 5%;
     margin-left: 5%;
-    margin-top:40px;
+    margin-top:3%;
     width: 40%;
     background: rgba(255,255,255,0.6);
+}
+
+.home .banner.full .third-left {
+    /*padding: 5px 20px;*/
+    position: absolute;
+    text-align: center;
+    float: left;
+    margin-right: 1%;
+    margin-left: 2%;
+    margin-top:3%;
+    width: 30%;
+    background: rgba(255,255,255,0.6);
+}
+
+.home .banner.full .third-center {
+    /*padding: 5px 20px;*/
+    position: absolute;
+    text-align: center;
+    left: 33%;
+    margin-right: 1%;
+    margin-left: 1%;
+    margin-top:3%;
+    width: 31%;
+    background: rgba(255,255,255,0.6);
+}
+
+.home .banner.full .third-right {
+    position:absolute;
+    text-align: center;
+    left: 66%;
+    margin-right: 2%;
+    margin-left: 1%;
+    margin-top:3%;
+    width: 30%;
+    background: rgba(255,255,255,0.6);
+
 }
 
 .home .banner.full h2 {
     font-family: 'Delius', cursive;
     color: #ff1c6e;
     font-size: 24px;
+}
+
+.home .banner.full h2 a {
+    color: #ff1c6e;
+    text-decoration:none;
+}
+
+.home .banner.full h2 a:hover {
+    text-decoration:underline;
 }
 
 .home .banner img {
@@ -598,14 +654,20 @@ label.required:after   {content:": *";}
 /* END modules */
 
 @media (max-width: 860px) {
+    header h1 a {
+        margin: 0 auto;
+        background-size: 100%;
+    }
     nav a {
         margin-left: 0;
+        padding-left: 5px;
+        padding-right:5px;
     }
     .embed-container { padding-bottom: 49.5%; }
     figure .embed-container { padding-bottom: 44.2%; }  
 }
 
-@media (max-width: 600px) {
+@media (max-width: 615px) {
     header h1 {
         margin-top: 0;
     }
@@ -620,10 +682,18 @@ label.required:after   {content:": *";}
         width: 95%;
     }
     
-    .half, .third, .twothird, .quarter, .half.gutter {
+    .half, .third, .twothird, .quarter, .half.gutter{
         width: 100%;
     }
     
+    .home .banner.full .half-left, .home .banner.full .half-right, .home .banner.full .third-left, .home .banner.full .third-center, .home .banner.full .third-right{
+        position: relative;
+        width:100%;
+        margin:auto;
+        left:auto;
+        background:none;
+    }
+
     .half.gutter {
         padding-right: 2%;
     }
@@ -632,6 +702,10 @@ label.required:after   {content:": *";}
         margin-top: -120px;
     }
     
+    .banner.full img {
+        display: none;
+    }
+
     .banner p {
         padding: 0;
         text-align: left;   
@@ -643,13 +717,17 @@ label.required:after   {content:": *";}
     .embed-container, figure .embed-container { padding-bottom: 48.5%; }
     
     .home .banner.full h1 {
+        /*background: none;
+        color: #3f3f3f;*/
         margin: 0;
         margin-bottom: 12px;
-        padding-left: 20%;
-        padding-right: 20%;
+        padding-left: 10%;
+        padding-right: 10%;
+        padding-top: 2%;
+        padding-bottom: 2%;
         position: static;
         text-align: center;
-        width: 60%;
+        width: 80%;
     }
 
 }
