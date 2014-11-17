@@ -388,7 +388,10 @@ footer p {
     color:#3f3f3f;
 }
 
-
+.holder {
+    position:relative;
+    width:100%;
+}
 
 .home .banner.full .half-left {
     /*padding: 5px 20px;*/
@@ -421,7 +424,8 @@ footer p {
     float: left;
     margin-right: 1%;
     margin-left: 2%;
-    margin-top:20px;
+   top: 50%;                         /* 3 */
+   transform: translate(0, -50%);
     width: 30%;
     background: rgba(255,255,255,0.6);
 }
@@ -433,7 +437,8 @@ footer p {
     left: 33%;
     margin-right: 1%;
     margin-left: 1%;
-    margin-top: 20px;
+   top: 50%;                         /* 3 */
+   transform: translate(0, -50%);
     width: 31%;
     background: rgba(255,255,255,0.6);
 }
@@ -444,7 +449,8 @@ footer p {
     left: 66%;
     margin-right: 2%;
     margin-left: 1%;
-    margin-top: 20px;
+   top: 50%;                         /* 3 */
+   transform: translate(0, -50%);
     width: 30%;
     background: rgba(255,255,255,0.6);
 
@@ -454,6 +460,10 @@ footer p {
     font-family: 'Delius', cursive;
     color: #ff1c6e;
     font-size: 24px;
+}
+
+.home .banner.full p {
+    margin-bottom:5px;
 }
 
 .home .banner.full h2 a {
@@ -692,6 +702,11 @@ label.required:after   {content:": *";}
         margin:auto;
         left:auto;
         background:none;
+        transform:none;
+    }
+
+    .home .banner.full p {
+        margin-bottom:15px;
     }
 
     .half.gutter {
