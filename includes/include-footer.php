@@ -25,6 +25,9 @@
             </ul>
         </div>
         <div class="quarter last">
+	<ul>
+		<!--nothinghere-->
+	</ul>
             <p>&copy; ProjectExplorer.org 2003&ndash;current</p>
             <p>All rights reserved</p>
             <a href="https://facebook.com/projectexplorer"><img class="social" src="/img/icon-facebook.png" alt="Facebook" /></a>
