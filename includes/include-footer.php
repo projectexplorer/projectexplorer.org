@@ -6,7 +6,7 @@
                 <li><a href="/about/awards-recognition">Awards &amp; Recognition</a></li>
                 <li><a href="/board/">Board &amp; Creative Advisors</a></li>
                 <li><a href="/about/contact">Contact</a></li>
-		<li><a href="/about/contributors">Contributors</a></li>
+		<li><a href="/contributors">Contributors</a></li>
                 <li><a href="/about/donate">Donate</a></li>
                 <li><a href="/explorers/">Explorers</a></li>
             </ul>
