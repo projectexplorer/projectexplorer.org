@@ -713,9 +713,14 @@ label.required:after   {content:": *";}
         width:100%;
         margin:auto;
         left:auto;
+        float:left;
         background:none;
         transform:none;
+        -webkit-transform:none;
+        -ms-transform:none;
+  
     }
+
 
     .home .banner.full p {
         margin-bottom:15px;
