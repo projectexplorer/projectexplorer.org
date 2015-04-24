@@ -53,7 +53,7 @@
                 <txp:smd_if_tag type="file">
                     In a tag (sort of?)
                 <txp:else />
-                    I'm not in a tag
+                    [ default content for both teachers / lessons goes here ]
                 </txp:smd_if_tag>
             </div>
             <div class="sidebar sidebar--about third last">
