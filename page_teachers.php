@@ -39,27 +39,27 @@
         <txp:else />
             <div class="twothird">
                 <txp:smd_if_tag_list>
-                    <txp:smd_tag_list type="file">
-                        This should show me one tag: <txp:smd_tag_name title="1" />
+                    <txp:smd_tag_list type="file" wraptag="h2" break="">
+                        Lesson plans in <txp:smd_tag_name title="1" />
                     </txp:smd_tag_list>
                 
-                    <txp:smd_related_tags wraptag="ul" break="li" type="file">
+                    <txp:smd_related_tags wraptag="div" break="p" type="file">
                         <txp:smd_if_tag type="file">
-                            <txp:file_download_link><txp:file_download_name /></txp:file_download_link>: <txp:file_download_description />
+                            <span class="lesson-filename"><txp:file_download_link><txp:file_download_name title="0" /></txp:file_download_link>:</span> <txp:file_download_description />
                         </txp:smd_if_tag>
                     </txp:smd_related_tags>
                 </txp:smd_if_tag_list>
 
                 <txp:smd_if_tag type="file">
-                    In a tag (sort of?)
+                    <!--selected tag above-->
                 <txp:else />
                     [ default content for both teachers / lessons goes here ]
                 </txp:smd_if_tag>
             </div>
             <div class="sidebar sidebar--about third last">
-                <h3>Subjects</h3>
+                <h3>Available Subjects</h3>
                 <txp:smd_tag_list type="file" showall="1">
-                  <a href="/lessons/file/<txp:smd_tag_name title="0" />"><txp:smd_tag_name title="1" /> <txp:smd_tag_count wrapcount="[:]" /></a>
+                  <a href="/lessons/file/<txp:smd_tag_name title="0" />"><txp:smd_tag_name title="1" /> </a>
                 </txp:smd_tag_list>
             </div>
 
