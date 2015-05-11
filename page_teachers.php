@@ -38,6 +38,12 @@
 
         <txp:else />
             <div class="twothird">
+                <txp:smd_if_tag type="file">
+                    <!--do nothing - selected tag below-->
+                <txp:else />
+                    <txp:article form="index_detail" status="sticky" section="lessons"/>
+                </txp:smd_if_tag>
+
                 <txp:smd_if_tag_list>
                     <txp:smd_tag_list type="file" wraptag="h2" break="">
                         Lesson plans in <txp:smd_tag_name title="1" />
@@ -49,13 +55,8 @@
                         </txp:smd_if_tag>
                     </txp:smd_related_tags>
                 </txp:smd_if_tag_list>
-
-                <txp:smd_if_tag type="file">
-                    <!--selected tag above-->
-                <txp:else />
-                    [ default content for both teachers / lessons goes here ]
-                </txp:smd_if_tag>
             </div>
+            
             <div class="sidebar sidebar--about third last">
                 <h3>Available Subjects</h3>
                 <txp:smd_tag_list type="file" showall="1">
