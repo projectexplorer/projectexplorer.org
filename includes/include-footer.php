@@ -6,7 +6,7 @@
                 <li><a href="/about/awards-recognition">Awards &amp; Recognition</a></li>
                 <li><a href="/board/">Board &amp; Creative Advisors</a></li>
                 <li><a href="/about/contact">Contact</a></li>
-                <!--<li><a href="/contributors">Contributors</a></li>-->
+                <li><a href="/contributors">Contributors</a></li>
                 <li><a href="/about/donate">Donate</a></li>
                 <li><a href="/explorers/">Explorers</a></li>
             </ul>
@@ -15,8 +15,8 @@
             <ul>
                 <li><a href="/about/faq">FAQ</a></li>
                 <li><a href="/about/impact">Impact</a></li>
-                <!--<li><a href="/about/lesson-plans">Lesson Plans</a></li>
-                <li><a href="/about/press">Press</a></li>-->
+                <li><a href="/lessons">Lesson Plans</a></li>
+                <!--<li><a href="/about/press">Press</a></li>-->
                 <li><a href="/about/legal">Legal</a></li>
                 <li><a href="/about/privacy">Privacy</a></li>
                 <li><a href="/about/site-help">Site Help</a></li>
