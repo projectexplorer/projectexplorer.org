@@ -81,7 +81,7 @@
 			<input type="text" id="country" name="country" value="'. stripslashes($_POST[country]) .'" maxlength="15">
 
 			<label for="email" class="required">Email</label>
-			<input type="email" id="email" name="email" value="'. $_POST[email] .'" maxlength="35">
+			<input type="email" id="email" name="email" value="'. $_POST[email] .'" maxlength="49">
 	
 			<label for="se_topics" class="textarealabel">How did you hear about ProjectExplorer.org?</label>
 			<textarea id="se_topics" name="se_topics">'. stripslashes($_POST[se_topics]) .'</textarea>
