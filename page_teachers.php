@@ -4,6 +4,11 @@
     <div class="wrapper">
 
         <?php include('includes/include-header.php'); ?>
+        <?php 
+            include('includes/db.php');
+            include('includes/pre.php');
+            include('includes/users.php');
+        ?>
 
         <txp:if_individual_article>
 
@@ -15,11 +20,8 @@
 
             <txp:else />
 
-                <?php 
-                    include('includes/db.php');
-                    include('includes/pre.php');
-                    include('includes/users.php');
 
+                <?php 
                     if (user_isloggedin()) {
                             $firstname = user_getfirstname();
                             $lastname = user_getlastname();
@@ -28,7 +30,6 @@
                     {
                            echo '<script type="text/javascript">window.location.href="/about/login?url='.$_SERVER["REQUEST_URI"].'";</script>';
                     }
-                    db_close();
                 ?>
 
 
@@ -37,6 +38,18 @@
             </txp:if_section>
 
         <txp:else />
+
+                <?php 
+                    if (user_isloggedin()) {
+                            $firstname = user_getfirstname();
+                            $lastname = user_getlastname();
+                    }
+                    else
+                    {
+                           echo '<script type="text/javascript">window.location.href="/about/login?url='.$_SERVER["REQUEST_URI"].'";</script>';
+                    }
+                ?>
+
             <div class="twothird">
                 <txp:smd_if_tag type="file">
                     <!--do nothing - selected tag below-->
@@ -66,7 +79,11 @@
 
 
         </txp:if_individual_article>
-    
+
+        <?php 
+            db_close();
+        ?>
+
     </div> <!-- END .wrapper -->
 
     <?php include('includes/include-footer.php') ?>
