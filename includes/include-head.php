@@ -15,13 +15,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="apple-touch-icon" sizes="114x114" href="/img/icon_iphone4-precomposed.png" />
 	<!-- !CSS -->
-	<link rel="stylesheet" href="/css/normalize.css">
-	<link rel="stylesheet" href="/css/superfish.css">
 	<link rel="stylesheet" href="/css/style.css">
-	<link rel="stylesheet" href="/css/jquery.fancybox.css">
 	<!--[if IE 7 ]>    <link rel="stylesheet" href="/css/ie7.css"> <![endif]-->
 	
-	<script src="/js/modernizr-min.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
   
 	<link rel="stylesheet" href="/js/vendor/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
