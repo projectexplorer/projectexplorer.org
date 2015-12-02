@@ -1,3 +1,4 @@
+*.old
 .DS_Store
 thumbs.db
 config.php
