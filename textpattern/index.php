@@ -9,8 +9,8 @@
 
 	Use of this software indicates acceptance of the Textpattern license agreement
 
-$HeadURL: https://textpattern.googlecode.com/svn/releases/4.5.5/source/textpattern/index.php $
-$LastChangedRevision: 5575 $
+$HeadURL: https://textpattern.googlecode.com/svn/releases/4.5.7/source/textpattern/index.php $
+$LastChangedRevision: 5900 $
 
 */
 
@@ -56,7 +56,7 @@ $LastChangedRevision: 5575 $
 
 	define("txpinterface", "admin");
 
-	$thisversion = '4.5.5';
+	$thisversion = '4.5.7';
 	$txp_using_svn = false; // set false for releases
 
 	ob_start(NULL, 2048);

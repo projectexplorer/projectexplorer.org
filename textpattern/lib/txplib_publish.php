@@ -9,8 +9,8 @@ All rights reserved.
 
 Use of this software indicates acceptance of the Textpattern license agreement
 
-$HeadURL: https://textpattern.googlecode.com/svn/releases/4.5.5/source/textpattern/lib/txplib_publish.php $
-$LastChangedRevision: 5569 $
+$HeadURL: https://textpattern.googlecode.com/svn/releases/4.5.7/source/textpattern/lib/txplib_publish.php $
+$LastChangedRevision: 5671 $
 
 @since 4.5.0
 */
@@ -597,32 +597,33 @@ function chopUrl($req)
 }
 
 /**
- * Save and retrieve the individual article's attributes plus article list attributes for next/prev tags
+ * Save and retrieve the individual article's attributes
+ * plus article list attributes for next/prev tags
  *
- * @param array $atts
- * @return array
- * @since 4.5.0
+ * @param   array $atts
+ * @return  array
+ * @since   4.5.0
+ * @package TagParser
  */
+
 function filterAtts($atts = null)
 {
 	global $prefs;
 	static $out = array();
 
-	$valid = array(
-		'sort'          => 'Posted desc',
-		'sortby'		=> '',
-		'sortdir'		=> '',
-		'keywords'      => '',
-		'expired'       => $prefs['publish_expired_articles'],
-		'id'            => '',
-		'time'          => 'past',
-	);
-
 	if (is_array($atts))
 	{
 		if (empty($out))
 		{
-			$out = $atts;
+			$out = lAtts(array(
+				'sort'          => 'Posted desc',
+				'sortby'		=> '',
+				'sortdir'		=> '',
+				'keywords'      => '',
+				'expired'       => $prefs['publish_expired_articles'],
+				'id'            => '',
+				'time'          => 'past',
+			), $atts, 0);
 			trace_add('[filterAtts accepted]');
 		}
 		else
@@ -636,6 +637,7 @@ function filterAtts($atts = null)
 	{
 		trace_add('[filterAtts not set]');
 	}
-	return lAtts($valid, $out, 0);
+	return $out;
 }
+
 ?>

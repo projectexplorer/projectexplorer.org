@@ -1,7 +1,7 @@
 <?php
 
 /*
-$HeadURL: https://textpattern.googlecode.com/svn/releases/4.5.5/source/textpattern/lib/txplib_html.php $
+$HeadURL: https://textpattern.googlecode.com/svn/releases/4.5.7/source/textpattern/lib/txplib_html.php $
 $LastChangedRevision: 4163 $
 */
 

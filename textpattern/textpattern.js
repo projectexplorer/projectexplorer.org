@@ -1,5 +1,5 @@
 /*
-$HeadURL: https://textpattern.googlecode.com/svn/releases/4.5.5/source/textpattern/textpattern.js $
+$HeadURL: https://textpattern.googlecode.com/svn/releases/4.5.7/source/textpattern/textpattern.js $
 $LastChangedRevision: 5004 $
 */
 

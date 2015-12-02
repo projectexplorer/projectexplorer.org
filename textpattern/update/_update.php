@@ -1,7 +1,7 @@
 <?php
 /*
-$HeadURL: https://textpattern.googlecode.com/svn/releases/4.5.5/source/textpattern/update/_update.php $
-$LastChangedRevision: 5572 $
+$HeadURL: https://textpattern.googlecode.com/svn/releases/4.5.7/source/textpattern/update/_update.php $
+$LastChangedRevision: 5900 $
 */
 	if (!defined('TXP_UPDATE'))
 		exit("Nothing here. You can't access this file directly.");
@@ -122,6 +122,12 @@ $LastChangedRevision: 5572 $
 	{
 		if ((include txpath.DS.'update'.DS.'_to_4.5.0.php') !== false)
 			$dbversion = '4.5.5';
+	}
+
+	if (version_compare($dbversion, '4.5.7', '<'))
+	{
+		if ((include txpath.DS.'update'.DS.'_to_4.5.7.php') !== false)
+			$dbversion = '4.5.7';
 	}
 
 	// Invite optional third parties to the update experience
