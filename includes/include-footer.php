@@ -9,15 +9,16 @@
                 <li><a href="/contributors">Contributors</a></li>
                 <li><a href="/about/donate">Donate</a></li>
                 <li><a href="/explorers/">Explorers</a></li>
+                <li><a href="/about/faq">FAQ</a></li>
             </ul>
         </div>
         <div class="half">
             <ul>
-                <li><a href="/about/faq">FAQ</a></li>
                 <li><a href="/about/impact">Impact</a></li>
                 <li><a href="/lessons">Lesson Plans</a></li>
                 <!--<li><a href="/about/press">Press</a></li>-->
                 <li><a href="/about/legal">Legal</a></li>
+		<li><a href="/about/passport-programs">Passport Programs</a></li>
                 <li><a href="/about/privacy">Privacy</a></li>
                 <li><a href="/about/site-help">Site Help</a></li>
                 <li><a href="/sponsors/">Sponsors &amp; Supporters</a></li>
