@@ -16,6 +16,7 @@
             </nav>
       </div>
 	
+	<div>
 	<script>
 	  (function() {
 	    var cx = '009269937871030745708:v6iphefk5da';
@@ -28,5 +29,6 @@
 	  })();
 	</script>
 	<gcse:search></gcse:search>
+	</div>
 	
 </header>
