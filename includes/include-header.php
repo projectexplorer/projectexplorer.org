@@ -15,4 +15,20 @@
                 <a href="/about/donate">Donate</a>
             </nav>
       </div>
+	
+	<div>
+	<script>
+	  (function() {
+	    var cx = '009269937871030745708:v6iphefk5da';
+	    var gcse = document.createElement('script');
+	    gcse.type = 'text/javascript';
+	    gcse.async = true;
+	    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+	    var s = document.getElementsByTagName('script')[0];
+	    s.parentNode.insertBefore(gcse, s);
+	  })();
+	</script>
+	<gcse:search></gcse:search>
+	</div>
+	
 </header>
